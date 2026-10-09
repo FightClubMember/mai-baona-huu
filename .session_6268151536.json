@@ -1,0 +1,10 @@
+[
+  {
+    "name": "access_token",
+    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3OTE1NTE2MTAsImlhdCI6MTc5MTUzNjYxMCwicGhvbmUiOiI2MjY4MTUxNTM2IiwicGhvbmVfbnVtYmVyIjoiNjI2ODE1MTUzNiIsInNpZCI6ImYwM2FiODEzLTE3ZjQtNDcxZi1iNWJjLThiYmI1NzFjZmU0YyIsInVzZXJfaWQiOiJjZjM5ZTYxYS1kM2Q0LTQ2NGUtODBjMS1hMTBkZTVkMzQ5YjEifQ.yjFwt035bVDAN74IznQKObcRM8hcs0oFgS9dbJPVtiw"
+  },
+  {
+    "name": "refresh_token",
+    "value": "b3dd1cba-1c82-4824-95a2-3a24d04da3d4"
+  }
+]

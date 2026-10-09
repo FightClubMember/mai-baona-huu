@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thunder Zone Firebase Session Extractor & Winner Harvester</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background: #0b0f19; color: #f8fafc; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .glass-card { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .gradient-text { background: linear-gradient(135deg, #38bdf8, #818cf8, #f43f5e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .winner-card { background: linear-gradient(135deg, rgba(234, 179, 8, 0.15), rgba(168, 85, 247, 0.15)); border: 1px solid rgba(234, 179, 8, 0.4); }
+        .top22-card { background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(59, 130, 246, 0.15)); border: 1px solid rgba(16, 185, 129, 0.4); }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0b0f19; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+    <div class="max-w-7xl mx-auto space-y-6">
+        
+        <!-- HEADER BANNER -->
+        <header class="glass-card rounded-3xl p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 border-l-4 border-amber-400">
+            <div class="space-y-1">
+                <div class="flex items-center gap-3">
+                    <span class="p-2.5 rounded-2xl bg-amber-500/20 text-amber-400 text-2xl shadow-lg border border-amber-500/30">
+                        <i class="fa-solid fa-trophy"></i>
+                    </span>
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight gradient-text">
+                            Thunder Zone Session & Winner Harvester
+                        </h1>
+                        <p class="text-xs text-slate-400">Created with Craft & Precision for Himanshu Kumar</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20 flex items-center gap-2 shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> 50x Ultra-Fast Engine
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold border border-cyan-500/20">
+                    Netlify / GitHub Ready
+                </span>
+            </div>
+        </header>
+
+        <!-- DASHBOARD GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- CONTROLS & INPUT (4 cols) -->
+            <div class="lg:col-span-4 glass-card rounded-3xl p-6 space-y-5 shadow-2xl">
+                <h2 class="text-base font-bold text-slate-200 flex items-center gap-2 border-b border-slate-800 pb-3">
+                    <i class="fa-solid fa-sliders text-cyan-400"></i> Control Panel & Inputs
+                </h2>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Single Firebase URL</label>
+                        <input type="text" id="singleUrl" placeholder="https://your-firebase.firebaseio.com" class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Bulk Firebase URLs</label>
+                        <textarea id="bulkUrls" rows="3" placeholder="https://panel1.firebaseio.com&#10;https://panel2.firebaseio.com" class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 transition resize-none"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 pt-1">
+                        <button onclick="inspectFirebase()" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-2.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-xs">
+                            <i class="fa-solid fa-magnifying-glass"></i> Inspect Devices
+                        </button>
+                        <button onclick="loadDeviceIndex()" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold py-2.5 rounded-xl border border-slate-700 transition flex items-center justify-center gap-2 text-xs">
+                            <i class="fa-solid fa-folder-open"></i> Auto Index
+                        </button>
+                    </div>
+
+                    <div class="border-t border-slate-800 pt-4 space-y-2">
+                        <button id="btnStartExtract" onclick="startExtraction()" disabled class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 disabled:opacity-40 text-white font-extrabold py-3 rounded-xl shadow-xl transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-rocket"></i> Start 50x Parallel Extract
+                        </button>
+
+                        <button onclick="runAudit()" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-2.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-xs">
+                            <i class="fa-solid fa-shield-halved"></i> Fast Ban & Winner Audit
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATS & LIVE TERMINAL (8 cols) -->
+            <div class="lg:col-span-8 space-y-6">
+                
+                <!-- COUNTERS -->
+                <div class="grid grid-cols-4 gap-3">
+                    <div class="glass-card rounded-2xl p-4 border-t-2 border-cyan-400 space-y-1">
+                        <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Total Devices</div>
+                        <div id="statTotal" class="text-2xl font-black text-cyan-400">0</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-4 border-t-2 border-emerald-400 space-y-1">
+                        <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Active Devices</div>
+                        <div id="statActive" class="text-2xl font-black text-emerald-400">0</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-4 border-t-2 border-amber-400 space-y-1">
+                        <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Winners Found</div>
+                        <div id="statWinners" class="text-2xl font-black text-amber-400">0</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-4 border-t-2 border-blue-400 space-y-1">
+                        <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Top 22 Rank</div>
+                        <div id="statTop22" class="text-2xl font-black text-blue-400">0</div>
+                    </div>
+                </div>
+
+                <!-- LIVE TERMINAL & EXPORT ACTIONS -->
+                <div class="glass-card rounded-3xl p-6 space-y-4 shadow-2xl">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-sm font-bold text-slate-200 flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-emerald-400"></i> Live Console Stream
+                        </h2>
+                        <div class="flex items-center gap-2">
+                            <button onclick="downloadExport('winners')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-semibold px-3 py-1.5 rounded-lg border border-amber-500/30 text-xs transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-download"></i> Export Winners
+                            </button>
+                            <button onclick="downloadExport('top22')" class="bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 font-semibold px-3 py-1.5 rounded-lg border border-blue-500/30 text-xs transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-download"></i> Export Top 22
+                            </button>
+                            <button onclick="downloadExport('sessions')" class="bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-semibold px-3 py-1.5 rounded-lg border border-emerald-500/30 text-xs transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-download"></i> Export Sessions
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PROGRESS BAR -->
+                    <div class="w-full bg-slate-900 rounded-full h-2.5 overflow-hidden p-0.5 border border-slate-800">
+                        <div id="progressBar" class="bg-gradient-to-r from-cyan-500 via-emerald-400 to-amber-400 h-full rounded-full transition-all duration-300" style="width: 0%;"></div>
+                    </div>
+
+                    <!-- CONSOLE BOX -->
+                    <div id="consoleLog" class="bg-slate-950 rounded-2xl p-4 h-52 overflow-y-auto font-mono text-xs text-slate-300 space-y-2 border border-slate-800 shadow-inner">
+                        <div class="text-slate-500 italic">[System] Engine initialized. Click Inspect Devices to start high-speed extraction.</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- WINNER HARVESTER HIGHLIGHT CARD -->
+        <div id="winnerSection" class="hidden space-y-4">
+            <div class="flex items-center justify-between">
+                <h2 class="text-xl font-extrabold text-amber-400 flex items-center gap-2">
+                    <i class="fa-solid fa-crown text-amber-400 animate-bounce"></i> Confirmed Winner Accounts Found!
+                </h2>
+                <span id="winnerCountBadge" class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/40">
+                    0 Winners
+                </span>
+            </div>
+            <div id="winnerCardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Winner cards injected here -->
+            </div>
+        </div>
+
+        <!-- TOP 22 LEADERBOARD HIGHLIGHT CARD -->
+        <div id="top22Section" class="hidden space-y-4">
+            <div class="flex items-center justify-between">
+                <h2 class="text-xl font-extrabold text-blue-400 flex items-center gap-2">
+                    <i class="fa-solid fa-ranking-star text-blue-400"></i> Top 22 Leaderboard Accounts
+                </h2>
+                <span id="top22CountBadge" class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-500/40">
+                    0 Accounts
+                </span>
+            </div>
+            <div id="top22CardsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Top 22 cards injected here -->
+            </div>
+        </div>
+
+        <!-- AUDIT TABLE SECTION -->
+        <div class="glass-card rounded-3xl p-6 space-y-5 shadow-2xl">
+            <div class="flex items-center justify-between">
+                <h2 class="text-lg font-bold text-slate-200 flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-purple-400"></i> Complete Audit & Session Register
+                </h2>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-slate-800">
+                <table class="w-full text-left text-xs text-slate-300">
+                    <thead class="bg-slate-900/90 text-slate-400 font-semibold uppercase tracking-wider border-b border-slate-800">
+                        <tr>
+                            <th class="p-3.5">Mobile Number</th>
+                            <th class="p-3.5">Status</th>
+                            <th class="p-3.5">Score</th>
+                            <th class="p-3.5">Rank</th>
+                            <th class="p-3.5">Winner / Prize</th>
+                            <th class="p-3.5">Firebase / Device ID</th>
+                        </tr>
+                    </thead>
+                    <tbody id="auditTableBody" class="divide-y divide-slate-800/60 bg-slate-950/40">
+                        <tr>
+                            <td colspan="6" class="p-6 text-center text-slate-500 italic">No audit records loaded. Click "Fast Ban & Winner Audit" above.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let inspectedDevices = [];
+
+        async function inspectFirebase() {
+            const single = document.getElementById('singleUrl').value.trim();
+            const bulk = document.getElementById('bulkUrls').value.trim();
+            
+            let urls = [];
+            if (single) urls.push(single);
+            if (bulk) {
+                bulk.split('\n').forEach(u => {
+                    const clean = u.trim();
+                    if (clean) urls.push(clean);
+                });
+            }
+
+            if (urls.length === 0) {
+                alert("Please enter at least one Firebase Panel URL!");
+                return;
+            }
+
+            appendLog("System", "Inspecting Firebase panel(s)...", "cyan");
+
+            try {
+                const resp = await fetch('/api/inspect', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ urls: urls })
+                });
+                const data = await resp.json();
+                
+                inspectedDevices = data.devices || [];
+                updateStats(data.total, data.active, 0, 0);
+                
+                if (data.active > 0) {
+                    document.getElementById('btnStartExtract').disabled = false;
+                    appendLog("System", `Found ${data.active} active devices ready for 50x parallel extraction.`, "emerald");
+                } else {
+                    appendLog("System", "No active devices found in specified Firebase panel(s).", "rose");
+                }
+            } catch (err) {
+                appendLog("Error", err.message, "rose");
+            }
+        }
+
+        async function loadDeviceIndex() {
+            appendLog("System", "Loading devices from device_index.json...", "cyan");
+            try {
+                const resp = await fetch('/api/inspect', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ use_index: true })
+                });
+                const data = await resp.json();
+                
+                inspectedDevices = data.devices || [];
+                updateStats(data.total, data.active, 0, 0);
+                
+                if (data.active > 0) {
+                    document.getElementById('btnStartExtract').disabled = false;
+                    appendLog("System", `Loaded ${data.active} active devices from device_index.json`, "emerald");
+                }
+            } catch (err) {
+                appendLog("Error", err.message, "rose");
+            }
+        }
+
+        function updateStats(total, active, winners, top22) {
+            document.getElementById('statTotal').innerText = total;
+            document.getElementById('statActive').innerText = active;
+            document.getElementById('statWinners').innerText = winners;
+            document.getElementById('statTop22').innerText = top22;
+        }
+
+        function startExtraction() {
+            if (inspectedDevices.length === 0) return;
+            
+            document.getElementById('btnStartExtract').disabled = true;
+            document.getElementById('progressBar').style.width = '0%';
+            appendLog("Engine", "Launching 50 Parallel Workers for instant session creation...", "amber");
+
+            const evtSource = new EventSource('/api/stream_extraction');
+            
+            evtSource.onmessage = function(e) {
+                const data = JSON.parse(e.data);
+                
+                if (data.type === 'log') {
+                    let color = 'slate';
+                    if (data.code === 'SUCCESS') color = 'emerald';
+                    if (data.code === 'BLOCKED') color = 'rose';
+                    if (data.code === 'NO_OTP' || data.code === 'RATE_LIMIT') color = 'amber';
+                    
+                    appendLog(data.phone, `[${data.code}] ${data.msg}`, color);
+                    if (data.progress) {
+                        document.getElementById('progressBar').style.width = `${data.progress}%`;
+                    }
+                }
+                
+                if (data.type === 'complete') {
+                    evtSource.close();
+                    document.getElementById('progressBar').style.width = '100%';
+                    appendLog("Complete", "Session extraction cycle complete! Running fast ban auditor...", "emerald");
+                    runAudit();
+                }
+            };
+
+            evtSource.onerror = function() {
+                evtSource.close();
+                document.getElementById('btnStartExtract').disabled = false;
+            };
+        }
+
+        async function runAudit() {
+            const tbody = document.getElementById('auditTableBody');
+            tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-cyan-400"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Auditing saved sessions for winners & leaderboard status...</td></tr>';
+            
+            try {
+                const resp = await fetch('/api/audit');
+                const data = await resp.json();
+                
+                tbody.innerHTML = '';
+                const results = data.results || [];
+                const winners = data.winners || [];
+                const top22 = data.top22 || [];
+
+                updateStats(data.total || results.length, data.active || results.length, winners.length, top22.length);
+
+                // Render Winner Cards
+                const winnerSec = document.getElementById('winnerSection');
+                const winnerContainer = document.getElementById('winnerCardsContainer');
+                if (winners.length > 0) {
+                    winnerSec.classList.remove('hidden');
+                    document.getElementById('winnerCountBadge').innerText = `${winners.length} Winners Found`;
+                    winnerContainer.innerHTML = '';
+                    winners.forEach(w => {
+                        let rewardsHtml = '';
+                        if (w.rewards && w.rewards.length > 0) {
+                            w.rewards.forEach(r => {
+                                rewardsHtml += `
+                                    <div class="bg-amber-950/40 border border-amber-500/30 rounded-xl p-3 space-y-1">
+                                        <div class="text-xs font-bold text-amber-300"><i class="fa-solid fa-gift mr-1"></i> ${r.prize_label || r.prize_type || 'Prize Reward'}</div>
+                                        <div class="text-xs font-mono font-bold text-amber-400">Voucher Code: <span class="bg-amber-500/20 px-2 py-0.5 rounded">${r.voucher_code || 'FLAGGED_ON_SERVER'}</span></div>
+                                        <div class="text-[11px] text-slate-400">Redeem: <a href="https://gullylabs.com/collections/thumsup-x-gully-labs" target="_blank" class="text-cyan-400 underline font-semibold">GullyLabs Redeem Link</a></div>
+                                    </div>
+                                `;
+                            });
+                        } else {
+                            rewardsHtml = `<div class="text-xs text-amber-400 italic">Winner Flagged on Server (Popup Triggered)</div>`;
+                        }
+
+                        winnerContainer.innerHTML += `
+                            <div class="winner-card rounded-2xl p-4 space-y-3 shadow-xl">
+                                <div class="flex items-center justify-between border-b border-amber-500/20 pb-2">
+                                    <span class="font-mono font-bold text-amber-300 text-base"><i class="fa-solid fa-mobile-screen mr-1.5"></i> ${w.phone}</span>
+                                    <span class="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 font-bold text-xs">Rank #${w.rank || 'N/A'}</span>
+                                </div>
+                                <div class="text-xs text-slate-300 space-y-1">
+                                    <div>Score: <span class="font-bold text-emerald-400">${w.score} pts</span> | Device ID: <span class="font-mono text-cyan-400">${w.device_id || 'N/A'}</span></div>
+                                    <div class="text-[11px] text-slate-400 truncate">Firebase: ${w.firebase_url || 'N/A'}</div>
+                                </div>
+                                ${rewardsHtml}
+                            </div>
+                        `;
+                    });
+                } else {
+                    winnerSec.classList.add('hidden');
+                }
+
+                // Render Top 22 Cards
+                const top22Sec = document.getElementById('top22Section');
+                const top22Container = document.getElementById('top22CardsContainer');
+                if (top22.length > 0) {
+                    top22Sec.classList.remove('hidden');
+                    document.getElementById('top22CountBadge').innerText = `${top22.length} Accounts Under #22`;
+                    top22Container.innerHTML = '';
+                    top22.forEach(lb => {
+                        top22Container.innerHTML += `
+                            <div class="top22-card rounded-2xl p-4 space-y-2 shadow-xl">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-mono font-bold text-blue-300 text-sm">${lb.phone}</span>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-bold text-xs">Rank #${lb.rank}</span>
+                                </div>
+                                <div class="text-xs text-slate-300">Score: <span class="font-bold text-emerald-400">${lb.score} pts</span></div>
+                                <div class="text-[10px] text-slate-400 truncate">Device: ${lb.device_id || 'N/A'}</div>
+                                <div class="text-[10px] text-slate-400 truncate">Panel: ${lb.firebase_url || 'N/A'}</div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    top22Sec.classList.add('hidden');
+                }
+
+                // Render Table
+                if (results.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-slate-500">No session files found on disk.</td></tr>';
+                    return;
+                }
+
+                results.forEach(item => {
+                    let badge = '<span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20">ACTIVE OK</span>';
+                    if (item.status === 'BANNED') {
+                        badge = '<span class="px-2.5 py-1 rounded-full bg-rose-500/10 text-rose-400 font-semibold border border-rose-500/20">BANNED / BLOCKED</span>';
+                    } else if (item.status !== 'ACTIVE') {
+                        badge = `<span class="px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 font-semibold">${item.status}</span>`;
+                    }
+
+                    const winBadge = item.is_winner ? '<span class="text-amber-400 font-bold"><i class="fa-solid fa-trophy mr-1"></i> WINNER!</span>' : '<span class="text-slate-500">-</span>';
+
+                    const row = `
+                        <tr class="hover:bg-slate-900/60 transition">
+                            <td class="p-3.5 font-mono font-bold text-cyan-400">${item.phone}</td>
+                            <td class="p-3.5">${badge}</td>
+                            <td class="p-3.5 font-semibold text-emerald-400">${item.score || 0}</td>
+                            <td class="p-3.5 font-semibold">${item.rank ? '#' + item.rank : '-'}</td>
+                            <td class="p-3.5">${winBadge}</td>
+                            <td class="p-3.5 text-slate-400 font-mono text-[11px]">${item.device_id || 'N/A'}</td>
+                        </tr>
+                    `;
+                    tbody.innerHTML += row;
+                });
+            } catch (err) {
+                tbody.innerHTML = `<tr><td colspan="6" class="p-6 text-center text-rose-400">Error running audit: ${err.message}</td></tr>`;
+            }
+        }
+
+        async function downloadExport(type) {
+            window.open(`/api/export?type=${type}`, '_blank');
+        }
+
+        function appendLog(tag, msg, color) {
+            const consoleDiv = document.getElementById('consoleLog');
+            const colorClasses = {
+                cyan: 'text-cyan-400',
+                emerald: 'text-emerald-400',
+                rose: 'text-rose-400',
+                amber: 'text-amber-400',
+                slate: 'text-slate-400'
+            };
+            const cls = colorClasses[color] || 'text-slate-300';
+            const logEntry = document.createElement('div');
+            logEntry.className = 'flex items-center gap-2';
+            logEntry.innerHTML = `<span class="text-slate-600 font-mono">[${new Date().toLocaleTimeString()}]</span> <span class="font-bold uppercase tracking-wider text-[10px] ${cls}">[${tag}]</span> <span class="text-slate-300">${msg}</span>`;
+            consoleDiv.appendChild(logEntry);
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,893 @@
+{
+  "summary": {
+    "total_files_scanned": 150,
+    "active_accounts_count": 93,
+    "expired_accounts_count": 55,
+    "blocked_accounts_count": 2
+  },
+  "active_accounts": [
+    {
+      "phone": "9016660274",
+      "username": "y04692iPa0",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7073393010",
+      "username": "t09A3i1i3d",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8018907297",
+      "username": "7208071Paj",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8249617585",
+      "username": "858e971N2h",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9589555129",
+      "username": "95a55ran89",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7016648569",
+      "username": "68v5eU071p",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8815698175",
+      "username": "R9nh758618",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7988308349",
+      "username": "9807ti3i8d",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6366554672",
+      "username": "Sin6647536",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8580607955",
+      "username": "580Ne7506a",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9805598600",
+      "username": "0005ig8598",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6363149681",
+      "username": "6a31616843",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7975802381",
+      "username": "uA7jr79n03",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9998680816",
+      "username": "0969N869k1",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9104953537",
+      "username": "d1il0a743b",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7099431615",
+      "username": "i91d4A9761",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9328103585",
+      "username": "8a2g15038i",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9989577641",
+      "username": "649h18ni7s",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9301677230",
+      "username": "796t2A0i10",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6265912900",
+      "username": "jv0s96sr50",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7697232522",
+      "username": "qr97k2365s",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9518362004",
+      "username": "o10d83e45z",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9596331121",
+      "username": "9r11t32U3F",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7507866098",
+      "username": "86R85707o6",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8471925443",
+      "username": "t471U34rs4",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9167920382",
+      "username": "qs9m2371Ne",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7830112886",
+      "username": "hbQ1u6z730",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7046185723",
+      "username": "721ksgier8",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6202090803",
+      "username": "U269a03280",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9954898215",
+      "username": "1549u982nA",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6352568050",
+      "username": "p526z3Ue05",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7989054394",
+      "username": "e0N8h4495a",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8152912860",
+      "username": "a0v28612a5",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9031549310",
+      "username": "t9433i910d",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8959637313",
+      "username": "1j993j386M",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6001504057",
+      "username": "6n05a5r040",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7005895100",
+      "username": "R1u80ah507",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9101967037",
+      "username": "30a9917710",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9591239227",
+      "username": "3952kr29a9",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9535856722",
+      "username": "28diAi6593",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7905671882",
+      "username": "i02r8ma916",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8660612863",
+      "username": "0i286a6jl1",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9071125650",
+      "username": "ai550r1271",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7483253460",
+      "username": "058467j4il",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9329834867",
+      "username": "73e6Nh3889",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6360820223",
+      "username": "3R268l20u2",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9880085912",
+      "username": "P8jao10099",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8822448079",
+      "username": "9878i28a4r",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8103714210",
+      "username": "2K4a1a00r8",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9964152044",
+      "username": "aR49i14045",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7975034412",
+      "username": "i3nA044775",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6382609604",
+      "username": "Er8vse6906",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8431960523",
+      "username": "820raa36nK",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7697532364",
+      "username": "h626e4N395",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9770674176",
+      "username": "7enS70746a",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9538711202",
+      "username": "A98alin270",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7760411088",
+      "username": "0r47171806",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9918071112",
+      "username": "haN1e81091",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9450930373",
+      "username": "9h0i34703t",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9739994930",
+      "username": "3sUe4z99P9",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8147129057",
+      "username": "45e81Y7dUs",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7250923452",
+      "username": "2h3a9nS5e0",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7889806091",
+      "username": "1e9uq9786s",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8308863953",
+      "username": "38i36d09t3",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9742212524",
+      "username": "5U22249ea2",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8123642872",
+      "username": "73D62u88U4",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8088359623",
+      "username": "u8086985ts",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6303620796",
+      "username": "r067es336m",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9083304779",
+      "username": "ag78t3903j",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9389500187",
+      "username": "Ecs30889r1",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6361055390",
+      "username": "m50sU36s9S",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8670778758",
+      "username": "reQhu087sc",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9119812448",
+      "username": "94e8p1124r",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6361363676",
+      "username": "63l6sOr63f",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8073119602",
+      "username": "8U079s103r",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9612877178",
+      "username": "s716U79c82",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9103677509",
+      "username": "7e9U9r5760",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6268005065",
+      "username": "26660kke0Z",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7988490029",
+      "username": "8e249j79hf",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9897670799",
+      "username": "eP6U9907e9",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6006892734",
+      "username": "v489ai00R2",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9606036237",
+      "username": "0n3e92sH0U",
+      "plays_remaining": 5,
+      "best_score": 0,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7856086788",
+      "username": "6R8lu06a88",
+      "plays_remaining": 0,
+      "best_score": 2660,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7804851753",
+      "username": "8cR451e73s",
+      "plays_remaining": 0,
+      "best_score": 2780,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "6268151536",
+      "username": "a61P6i65r3",
+      "plays_remaining": 0,
+      "best_score": 2680,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9897311632",
+      "username": "3esj8q37U2",
+      "plays_remaining": 0,
+      "best_score": 2080,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9798338637",
+      "username": "8386eh9m9s",
+      "plays_remaining": 0,
+      "best_score": 1760,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9967490915",
+      "username": "5974ik691a",
+      "plays_remaining": 0,
+      "best_score": 2735,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "8087037691",
+      "username": "19P8oo0308",
+      "plays_remaining": 0,
+      "best_score": 2460,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "7805041673",
+      "username": "805j1oa773",
+      "plays_remaining": 0,
+      "best_score": 2845,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9334917372",
+      "username": "k319937k34",
+      "plays_remaining": 0,
+      "best_score": 2455,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9301372191",
+      "username": "1Xl3Uasb21",
+      "plays_remaining": 0,
+      "best_score": 2795,
+      "status": "ACTIVE"
+    },
+    {
+      "phone": "9556822122",
+      "username": "582291i2Am",
+      "plays_remaining": 0,
+      "best_score": 2605,
+      "status": "ACTIVE"
+    }
+  ],
+  "blocked_accounts": [
+    {
+      "phone": "9026469704",
+      "username": "297649a60y"
+    },
+    {
+      "phone": "9365362417",
+      "username": "254933ha16"
+    }
+  ],
+  "expired_accounts": [
+    {
+      "phone": "7804945156",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "8980859870",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "8302221497",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9442937890",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "6380923059",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "7638062625",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9670684788",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "7668583011",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9219855616",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "8955022831",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "7754900172",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "8511409816",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "7848830242",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "8287199454",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "7061080257",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "6371647893",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "8640007961",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9834469402",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "8218801863",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "6392877873",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9652293069",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9993694238",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9942264844",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9770385413",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9691679423",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "6264314452",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9728428838",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9691952095",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "7603875862",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9535911980",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9905306251",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9693016099",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9232989616",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "6265912241",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "6003440727",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9954209758",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "8597413870",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9352477115",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "8077562098",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9945957500",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9957630956",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9007592665",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9509694574",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9740441169",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9980709306",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9845801602",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "6303293520",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "8651277536",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "7807265760",
+      "reason": "File read error: [Errno 2] No such file or directory: 'C:\\\\Users\\\\Himanshu Kumar\\\\OneDrive\\\\Desktop\\\\New folder (2)\\\\.session_7807265760.json'"
+    },
+    {
+      "phone": "8799808906",
+      "reason": "File read error: [Errno 2] No such file or directory: 'C:\\\\Users\\\\Himanshu Kumar\\\\OneDrive\\\\Desktop\\\\New folder (2)\\\\.session_8799808906.json'"
+    },
+    {
+      "phone": "8073410373",
+      "reason": "File read error: [Errno 2] No such file or directory: 'C:\\\\Users\\\\Himanshu Kumar\\\\OneDrive\\\\Desktop\\\\New folder (2)\\\\.session_8073410373.json'"
+    },
+    {
+      "phone": "9341786551",
+      "reason": "File read error: [Errno 2] No such file or directory: 'C:\\\\Users\\\\Himanshu Kumar\\\\OneDrive\\\\Desktop\\\\New folder (2)\\\\.session_9341786551.json'"
+    },
+    {
+      "phone": "8529170958",
+      "reason": "File read error: [Errno 2] No such file or directory: 'C:\\\\Users\\\\Himanshu Kumar\\\\OneDrive\\\\Desktop\\\\New folder (2)\\\\.session_8529170958.json'"
+    },
+    {
+      "phone": "9558488435",
+      "reason": "Session / Refresh Token Expired"
+    },
+    {
+      "phone": "9621160397",
+      "reason": "Session / Refresh Token Expired"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+========================================================================================================================
+🏆 REWARD & RANK SUMMARY (RANK 1 FIRST) [SUCCESSFUL: 10]
+========================================================================================================================
+Rank       Score    Phone          Device ID (Client ID)    Firebase Link (Panel URL)                          Username      
+------------------------------------------------------------------------------------------------------------------------
+N/A        0        8923663152     24bcf1e870a07568         https://nyawala-3e7c3-default-rtdb.asia-southeast1.firebasedatabase.app/ sU926q58U3    
+N/A        0        7007237126     3b050c87eb9faea4         https://fwwg-d04bc-default-rtdb.firebaseio.com/    72m0707236    
+N/A        0        9325962019     a9878ff524c4808c         https://nyawala-3e7c3-default-rtdb.asia-southeast1.firebasedatabase.app/ 1Pr65929a3    
+N/A        0        8758445880     e665b32d83efde7c         https://subjuoeh-default-rtdb.firebaseio.com/      Blh858848S    
+N/A        0        7061663262     eff1e730b8e5ddee         https://anup-1413-default-rtdb.firebaseio.com/     66h3a626B7    
+N/A        0        9960760067     10e89078631674fc         https://nyawala-3e7c3-default-rtdb.asia-southeast1.firebasedatabase.app/ N/A           
+N/A        0        9525316624     f452e8de1988b544         https://anup-1413-default-rtdb.firebaseio.com/     N/A           
+N/A        0        9572081187     d3eacd98616bb738         https://anup-1413-default-rtdb.firebaseio.com/     N/A           
+N/A        0        9763808811     9969fb5c9b23fbf8         https://anup-1413-default-rtdb.firebaseio.com/     N/A           
+N/A        0        6207501903     7507331ec4332703         https://anup-1413-default-rtdb.firebaseio.com/     N/A           
+========================================================================================================================
