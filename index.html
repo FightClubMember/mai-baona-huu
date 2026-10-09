@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Font Orbitron & Inter -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <script>
@@ -24,7 +24,6 @@
                         cyber: {
                             black: '#05070d',
                             dark: '#0a0e1a',
-                            card: 'rgba(15, 23, 42, 0.75)',
                             cyan: '#00f0ff',
                             magenta: '#ff007f',
                             gold: '#ffd700',
@@ -39,16 +38,13 @@
     <style>
         body { background: #05070d; color: #f8fafc; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         
-        /* Neon Cyber Glow Effects */
         .neon-border-cyan { border: 1px solid rgba(0, 240, 255, 0.4); box-shadow: 0 0 15px rgba(0, 240, 255, 0.15); }
         .neon-border-gold { border: 1px solid rgba(255, 215, 0, 0.5); box-shadow: 0 0 20px rgba(255, 215, 0, 0.2); }
-        .neon-border-magenta { border: 1px solid rgba(255, 0, 127, 0.4); box-shadow: 0 0 15px rgba(255, 0, 127, 0.15); }
         
         .glow-text-cyan { text-shadow: 0 0 10px rgba(0, 240, 255, 0.6); }
         .glow-text-gold { text-shadow: 0 0 12px rgba(255, 215, 0, 0.7); }
         .glow-text-emerald { text-shadow: 0 0 10px rgba(0, 255, 136, 0.6); }
 
-        /* Glassmorphism Ultra HUD */
         .hud-card {
             background: rgba(13, 19, 36, 0.75);
             backdrop-filter: blur(20px);
@@ -57,7 +53,6 @@
             border-radius: 20px;
         }
 
-        /* Scanline Animation */
         .scanline {
             width: 100%;
             height: 2px;
@@ -69,7 +64,6 @@
             100% { transform: translateY(800%); }
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #05070d; }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
@@ -79,13 +73,12 @@
 
 <body class="min-h-screen p-3 md:p-6 space-y-6 relative selection:bg-cyan-500 selection:text-black">
     
-    <!-- BACKGROUND GRID & SCANNER -->
     <div class="fixed inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-20 pointer-events-none"></div>
     <div class="scanline fixed top-0 left-0 pointer-events-none z-50"></div>
 
     <div class="max-w-7xl mx-auto space-y-6 relative z-10">
         
-        <!-- HEADER HUD BANNER -->
+        <!-- HEADER BANNER -->
         <header class="hud-card p-5 md:p-6 neon-border-cyan flex flex-col lg:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-4">
                 <div class="p-3.5 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-3xl shadow-lg glow-text-cyan">
@@ -104,7 +97,7 @@
                 </div>
             </div>
 
-            <!-- MODE SWITCHER & ENGINE TAGS -->
+            <!-- ENGINE SELECTOR -->
             <div class="flex flex-wrap items-center gap-2">
                 <div class="flex items-center bg-slate-900/90 border border-slate-800 rounded-xl p-1 text-xs">
                     <button id="btnEngineClient" onclick="setEngineMode('client')" class="px-3 py-1.5 rounded-lg font-bold transition text-cyan-400 bg-cyan-500/20 border border-cyan-500/30">
@@ -117,11 +110,11 @@
             </div>
         </header>
 
-        <!-- SERVER CONFIG BAR (Hidden by default unless Server Engine selected) -->
+        <!-- SERVER CONFIG BAR -->
         <div id="serverConfigBar" class="hidden hud-card p-4 border border-cyan-500/30 space-y-2">
             <div class="flex flex-col md:flex-row items-center justify-between gap-3">
                 <div class="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400">
-                    <i class="fa-solid fa-network-wired"></i> Python Backend URL:
+                    <i class="fa-solid fa-network-wired"></i> Python Backend Server API URL:
                 </div>
                 <div class="flex items-center gap-2 w-full md:w-auto">
                     <input type="text" id="apiBaseUrl" placeholder="https://your-app.onrender.com or http://127.0.0.1:5000" class="bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-xs text-cyan-300 font-mono w-full md:w-96 focus:outline-none focus:border-cyan-500">
@@ -130,7 +123,6 @@
                     </button>
                 </div>
             </div>
-            <p class="text-[11px] text-slate-400 font-mono">Note: When using Netlify HTTPS, your backend URL must be HTTPS (e.g. Render/Railway) to avoid Chrome mixed-content blocks.</p>
         </div>
 
         <!-- MAIN DASHBOARD GRID -->
@@ -142,7 +134,7 @@
                     <h2 class="text-sm font-bold font-orbitron tracking-wider text-cyan-400 flex items-center gap-2">
                         <i class="fa-solid fa-database"></i> TARGET FIREBASE SOURCE
                     </h2>
-                    <span class="text-[10px] font-mono text-slate-500">v67.4</span>
+                    <span class="text-[10px] font-mono text-slate-500">v67.5</span>
                 </div>
 
                 <div class="space-y-4 font-mono text-xs">
@@ -180,7 +172,7 @@
             <!-- DASHBOARD WIDGETS & LIVE TERMINAL (8 cols) -->
             <div class="lg:col-span-8 space-y-6">
                 
-                <!-- COUNTERS HUD WIDGETS -->
+                <!-- COUNTERS -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono">
                     <div class="hud-card p-4 border-t-2 border-cyan-400 space-y-1">
                         <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Total Devices</div>
@@ -200,7 +192,7 @@
                     </div>
                 </div>
 
-                <!-- LIVE HUD STREAM CONSOLE -->
+                <!-- LIVE CONSOLE -->
                 <div class="hud-card p-5 space-y-4">
                     <div class="flex items-center justify-between">
                         <h2 class="text-xs font-bold font-orbitron text-slate-200 tracking-wider flex items-center gap-2">
@@ -219,14 +211,12 @@
                         </div>
                     </div>
 
-                    <!-- PROGRESS BAR -->
                     <div class="w-full bg-slate-950 rounded-full h-2.5 overflow-hidden p-0.5 border border-slate-800">
                         <div id="progressBar" class="bg-gradient-to-r from-cyan-400 via-emerald-400 to-amber-300 h-full rounded-full transition-all duration-300" style="width: 0%;"></div>
                     </div>
 
-                    <!-- LOG CONSOLE BOX -->
                     <div id="consoleLog" class="bg-slate-950/90 rounded-xl p-4 h-56 overflow-y-auto font-mono text-xs text-slate-300 space-y-2 border border-slate-800 shadow-inner">
-                        <div class="text-slate-500 italic">[System] HUD Console online. Select mode and click Inspect Panels to start...</div>
+                        <div class="text-slate-500 italic">[System] HUD Console ready. Enter Firebase URL & click Inspect Panels.</div>
                     </div>
                 </div>
 
@@ -234,7 +224,35 @@
 
         </div>
 
-        <!-- WINNER VICTORY HUD CARDS -->
+        <!-- DISCOVERED DEVICES TABLE -->
+        <div id="discoveredDevicesSection" class="hidden hud-card p-5 space-y-4 border border-cyan-500/30">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h2 class="text-sm font-bold font-orbitron text-cyan-400 flex items-center gap-2">
+                    <i class="fa-solid fa-mobile-retro"></i> DISCOVERED FIREBASE DEVICES
+                </h2>
+                <span id="discoveredCountTag" class="px-2.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-xs font-bold">
+                    0 Devices
+                </span>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-800">
+                <table class="w-full text-left font-mono text-xs text-slate-300">
+                    <thead class="bg-slate-950/90 text-slate-400 font-bold uppercase tracking-wider border-b border-slate-800">
+                        <tr>
+                            <th class="p-3">Mobile / Client ID</th>
+                            <th class="p-3">Status</th>
+                            <th class="p-3">SMS Count</th>
+                            <th class="p-3">Firebase Panel URL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="discoveredDevicesBody" class="divide-y divide-slate-800/60 bg-slate-950/40">
+                        <!-- Discovered devices injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- WINNER CARDS -->
         <div id="winnerSection" class="hidden space-y-4">
             <div class="flex items-center justify-between border-b border-amber-500/30 pb-3">
                 <h2 class="text-lg font-black font-orbitron text-amber-300 glow-text-gold flex items-center gap-2">
@@ -245,11 +263,11 @@
                 </span>
             </div>
             <div id="winnerCardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Winner cards injected here -->
+                <!-- Winner cards -->
             </div>
         </div>
 
-        <!-- TOP 22 LEADERBOARD CARDS -->
+        <!-- TOP 22 CARDS -->
         <div id="top22Section" class="hidden space-y-4">
             <div class="flex items-center justify-between border-b border-blue-500/30 pb-3">
                 <h2 class="text-lg font-black font-orbitron text-blue-300 flex items-center gap-2">
@@ -260,11 +278,11 @@
                 </span>
             </div>
             <div id="top22CardsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- Top 22 cards injected here -->
+                <!-- Top 22 cards -->
             </div>
         </div>
 
-        <!-- AUDIT & SESSION REGISTER TABLE -->
+        <!-- AUDIT TABLE -->
         <div class="hud-card p-6 space-y-4">
             <div class="flex items-center justify-between">
                 <h2 class="text-sm font-bold font-orbitron text-slate-200 tracking-wider flex items-center gap-2">
@@ -297,7 +315,7 @@
 
     <!-- JAVASCRIPT SYSTEM ENGINE -->
     <script>
-        let engineMode = 'client'; // 'client' or 'server'
+        let engineMode = 'client';
         let inspectedDevices = [];
         let globalAuditData = { results: [], winners: [], top22: [], clean_sessions: [] };
 
@@ -311,12 +329,12 @@
                 btnClient.className = 'px-3 py-1.5 rounded-lg font-bold transition text-cyan-400 bg-cyan-500/20 border border-cyan-500/30';
                 btnServer.className = 'px-3 py-1.5 rounded-lg font-bold text-slate-400 transition hover:text-white';
                 cfgBar.classList.add('hidden');
-                appendLog("System", "Engine mode switched to: Direct Netlify Client-Side (No Backend Needed)", "cyan");
+                appendLog("System", "Engine mode: Netlify Direct (Pure Browser)", "cyan");
             } else {
                 btnServer.className = 'px-3 py-1.5 rounded-lg font-bold transition text-cyan-400 bg-cyan-500/20 border border-cyan-500/30';
                 btnClient.className = 'px-3 py-1.5 rounded-lg font-bold text-slate-400 transition hover:text-white';
                 cfgBar.classList.remove('hidden');
-                appendLog("System", "Engine mode switched to: Remote Python Backend Server", "cyan");
+                appendLog("System", "Engine mode: Remote Python Server API", "cyan");
             }
         }
 
@@ -334,60 +352,112 @@
         function saveApiBaseUrl() {
             const url = document.getElementById('apiBaseUrl').value.trim();
             localStorage.setItem('API_BASE_URL', url);
-            appendLog("System", `Backend API Base URL saved: ${url}`, "cyan");
+            appendLog("System", `Backend API URL saved: ${url}`, "cyan");
         }
 
-        // PURE CLIENT-SIDE FIREBASE PANEL INSPECTOR
+        async function fetchWithTimeout(url, timeoutMs = 6000) {
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), timeoutMs);
+            try {
+                const resp = await fetch(url, { signal: controller.signal, mode: 'cors' });
+                clearTimeout(timer);
+                if (resp.ok) {
+                    return await resp.json();
+                }
+            } catch (e) {
+                clearTimeout(timer);
+            }
+            return null;
+        }
+
+        function normalizeFirebaseUrl(rawUrl) {
+            let base = rawUrl.trim().replace(/\/+$/, '');
+            if (base.endsWith('.json')) {
+                base = base.slice(0, -5);
+            }
+            return base;
+        }
+
         async function inspectFirebaseClient(urls) {
             let devices = [];
-            for (let purl of urls) {
-                purl = purl.trim().replace(/\/+$/, '');
-                if (!purl) continue;
+            for (let rawUrl of urls) {
+                let base = normalizeFirebaseUrl(rawUrl);
+                if (!base) continue;
 
-                appendLog("Inspector", `Scanning panel: ${purl}`, "cyan");
+                appendLog("Inspector", `Fetching data from: ${base}`, "cyan");
                 
-                const testUrls = [
-                    `${purl}/clients.json`,
-                    `${purl}/messages.json`,
-                    `${purl}/.json`
+                const endpoints = [
+                    base.includes('.firebaseio.com') || base.includes('.firebasedatabase.app') ? `${base}/.json` : `${base}.json`,
+                    `${base}/clients.json`,
+                    `${base}/messages.json`
                 ];
 
                 let data = null;
-                for (let u of testUrls) {
-                    try:
-                        const r = await fetch(u, { timeout: 5000 });
-                        if (r.ok) {
-                            data = await r.json();
-                            if (data && typeof data === 'object') break;
-                        }
-                    } catch (e) {}
+                for (let ep of endpoints) {
+                    data = await fetchWithTimeout(ep, 6000);
+                    if (data && typeof data === 'object') break;
                 }
 
                 if (data && typeof data === 'object') {
+                    appendLog("Inspector", `Received Firebase payload from panel! Processing nodes...`, "emerald");
                     if (data.clients && typeof data.clients === 'object') {
                         for (let cid in data.clients) {
                             let info = data.clients[cid];
+                            if (!info || typeof info !== 'object') continue;
                             let phone = info.phone || info.mobile || info.phoneNumber || cid;
                             let smsData = info.sms || info.messages || {};
-                            let isActive = Object.keys(smsData).length > 0;
-                            devices.push({ phone: String(phone), client_id: cid, panel_url: purl, active: isActive });
+                            let smsCount = Object.keys(smsData).length;
+                            devices.push({ phone: String(phone), client_id: cid, panel_url: base, active: smsCount > 0, sms_count: smsCount });
                         }
                     } else if (data.messages && typeof data.messages === 'object') {
                         for (let cid in data.messages) {
                             let msgs = data.messages[cid];
-                            let isActive = Object.keys(msgs).length > 0;
-                            devices.push({ phone: String(cid), client_id: cid, panel_url: purl, active: isActive });
+                            let smsCount = typeof msgs === 'object' ? Object.keys(msgs).length : 0;
+                            devices.push({ phone: String(cid), client_id: cid, panel_url: base, active: smsCount > 0, sms_count: smsCount });
                         }
                     } else {
                         for (let k in data) {
                             if (typeof data[k] === 'object') {
-                                devices.push({ phone: String(k), client_id: k, panel_url: purl, active: true });
+                                let smsCount = Object.keys(data[k]).length;
+                                devices.push({ phone: String(k), client_id: k, panel_url: base, active: true, sms_count: smsCount });
                             }
                         }
                     }
+                } else {
+                    appendLog("Inspector", `Could not read node structure or panel is locked/empty for: ${base}`, "amber");
                 }
             }
             return devices;
+        }
+
+        function renderDiscoveredDevices(devices) {
+            const sec = document.getElementById('discoveredDevicesSection');
+            const tbody = document.getElementById('discoveredDevicesBody');
+            const tag = document.getElementById('discoveredCountTag');
+
+            if (!devices || devices.length === 0) {
+                sec.classList.add('hidden');
+                return;
+            }
+
+            sec.classList.remove('hidden');
+            tag.innerText = `${devices.length} Devices Discovered`;
+            tbody.innerHTML = '';
+
+            devices.forEach(d => {
+                const badge = d.active 
+                    ? '<span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">ACTIVE</span>'
+                    : '<span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400">INACTIVE</span>';
+                
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-900/60 transition">
+                        <td class="p-3 font-bold text-cyan-400">${d.phone}</td>
+                        <td class="p-3">${badge}</td>
+                        <td class="p-3 text-slate-300">${d.sms_count || 0}</td>
+                        <td class="p-3 text-slate-400 text-[11px] truncate max-w-xs">${d.panel_url}</td>
+                    </tr>
+                `;
+            });
         }
 
         async function inspectFirebase() {
@@ -420,7 +490,7 @@
                         headers: {'Content-Type': 'application/json'},
                         body: JSON.stringify({ urls: urls })
                     });
-                    if (!resp.ok) throw new Error(`HTTP ${resp.status}: Check backend URL`);
+                    if (!resp.ok) throw new Error(`HTTP ${resp.status}: Check Python Server URL`);
                     const data = await resp.json();
                     inspectedDevices = data.devices || [];
                 }
@@ -429,12 +499,16 @@
                 const active = inspectedDevices.filter(d => d.active).length;
                 
                 updateStats(total, active, 0, 0);
+                renderDiscoveredDevices(inspectedDevices);
                 
                 if (active > 0) {
                     document.getElementById('btnStartExtract').disabled = false;
-                    appendLog("System", `Inspection Complete! ${active} Active devices ready.`, "emerald");
+                    appendLog("System", `Inspection Complete! ${active} Active devices found out of ${total} total.`, "emerald");
+                } else if (total > 0) {
+                    document.getElementById('btnStartExtract').disabled = false;
+                    appendLog("System", `Found ${total} total devices in panel. Ready for extraction.`, "emerald");
                 } else {
-                    appendLog("System", "No active devices found in panels.", "rose");
+                    appendLog("System", "No device nodes discovered. Make sure Firebase URL is accessible.", "rose");
                 }
             } catch (err) {
                 appendLog("Error", err.message, "rose");
@@ -454,18 +528,18 @@
                     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
                     const data = await resp.json();
                     inspectedDevices = data.devices || [];
+                    
+                    const total = inspectedDevices.length;
+                    const active = inspectedDevices.filter(d => d.active).length;
+                    updateStats(total, active, 0, 0);
+                    renderDiscoveredDevices(inspectedDevices);
+                    
+                    if (active > 0) {
+                        document.getElementById('btnStartExtract').disabled = false;
+                        appendLog("System", `Loaded ${active} active devices from index.`, "emerald");
+                    }
                 } else {
-                    alert("Local index loading requires Python Server mode. In Netlify mode, paste Firebase URLs into Bulk panel!");
-                    return;
-                }
-
-                const total = inspectedDevices.length;
-                const active = inspectedDevices.filter(d => d.active).length;
-                updateStats(total, active, 0, 0);
-                
-                if (active > 0) {
-                    document.getElementById('btnStartExtract').disabled = false;
-                    appendLog("System", `Loaded ${active} active devices from index.`, "emerald");
+                    alert("Local index file loading is for Python Server mode. In Netlify Browser mode, paste your Firebase URLs in the input box!");
                 }
             } catch (err) {
                 appendLog("Error", err.message, "rose");
@@ -515,14 +589,14 @@
                     document.getElementById('btnStartExtract').disabled = false;
                 };
             } else {
-                appendLog("Engine", "Running Client-Side Direct Session Creation & OTP Listener...", "amber");
+                appendLog("Engine", "Running Client-Side Ban & Winner Auditor...", "amber");
                 runAudit();
             }
         }
 
         async function runAudit() {
             const tbody = document.getElementById('auditTableBody');
-            tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-cyan-400 font-mono"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Auditing saved sessions for winners & ranks...</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="6" class="p-6 text-center text-cyan-400 font-mono"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Auditing sessions for winners & ranks...</td></tr>';
             
             try {
                 const targetUrl = getApiUrl('/api/audit');
@@ -542,7 +616,7 @@
 
                 updateStats(data.total || results.length, data.active || results.length, winners.length, top22.length);
 
-                // WINNER CARDS
+                // WINNERS
                 const winnerSec = document.getElementById('winnerSection');
                 const winnerContainer = document.getElementById('winnerCardsContainer');
                 if (winners.length > 0) {
@@ -583,7 +657,7 @@
                     winnerSec.classList.add('hidden');
                 }
 
-                // TOP 22 CARDS
+                // TOP 22
                 const top22Sec = document.getElementById('top22Section');
                 const top22Container = document.getElementById('top22CardsContainer');
                 if (top22.length > 0) {
